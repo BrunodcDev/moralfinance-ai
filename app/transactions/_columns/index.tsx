@@ -2,6 +2,7 @@
 
 import { transaction } from "@prisma/client"
 import { ColumnDef } from "@tanstack/react-table"
+import TransactionTypeBadge from "../_components/type-badge";
 
 
 export const transactioncolumns: ColumnDef<transaction>[] = [
@@ -12,6 +13,9 @@ export const transactioncolumns: ColumnDef<transaction>[] = [
   {
     accessorKey: "type",
     header: "Tipo",
+    cell: ({row:{original: transaction}}) => {
+      <TransactionTypeBadge transaction={transaction}/>
+    },
   },
   {
     accessorKey: "catgory",
