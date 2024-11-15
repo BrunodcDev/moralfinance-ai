@@ -1,33 +1,52 @@
-import { Card, CardContent, CardHeader } from "@/app/_components/ui/card";
+
 import { PiggyBankIcon, TrendingDownIcon, TrendingUpIcon, WalletIcon } from "lucide-react";
 import SummaryCard from "./summary-card";
+import { db } from "@/app/_lib/prisma";
 
-const SummaryCards = () => {
+interface SummaryCards {
+    month: string;
+}
+
+const SummaryCards = async ({month}: SummaryCards) => {
+    const where = {
+        date: {
+            gte: new Date(`2024-${month}-01`),
+            lt: new Date(`2024-${month}-31`),
+        }
+    }
+    const depositsTotal = Number((await db.transaction.aggregate({
+        where: {...where, type: "DEPOSIT"},
+        _sum: { amount: true },
+    }))?._sum?.amount);
+    const investmentsTotal = Number((await db.transaction.aggregate({
+        where: {...where, type: "INVESTMENT"},
+        _sum: { amount: true },
+    }))?._sum?.amount);
+    const expensesTotal = Number((await db.transaction.aggregate({
+        where: {...where, type: "EXPENSE"},
+        _sum: { amount: true },
+    }))?._sum?.amount);
+    const balance = depositsTotal - investmentsTotal - expensesTotal;
     return ( 
         <div className="space-y-6">
             {/* PRIMEIRO CARD */}
-            <Card>
-                <CardHeader>
-                    <WalletIcon size={16} />
-                    <p className="text-white opacity-70">Saldo</p>
-                </CardHeader>
-                <CardContent>
-                    <p className="text-4x1 font-bold">R$5.000,00</p>
-                </CardContent>
-            </Card>
+           
+
+            <SummaryCard icon={<WalletIcon size={16} />} title="Saldo" amount={balance} size="Large"/>
+
             {/* OUTROS CARDS */}
-            <div className="grid grid-cols-3">
-            <SummaryCard icon={<PiggyBankIcon size={14} />}
+            <div className="grid grid-cols-3 gap-6">
+            <SummaryCard icon={<PiggyBankIcon size={16} />}
             title="Investimento"
-            amount={2500}
+            amount={investmentsTotal}
             />
-            <SummaryCard icon={<TrendingUpIcon size={14} />}
+            <SummaryCard icon={<TrendingUpIcon size={16} className="text-primary" />}
             title="Receita"
-            amount={2500}
+            amount={depositsTotal}
             />
-            <SummaryCard icon={<TrendingDownIcon size={14} />}
+            <SummaryCard icon={<TrendingDownIcon size={16} className="text-red-600" />}
             title="Despesas"
-            amount={2500}
+            amount={expensesTotal}
             />
             </div>
         </div>
