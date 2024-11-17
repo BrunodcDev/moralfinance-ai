@@ -30,7 +30,7 @@ import {
   TRANSACTION_CATEGORY_OPTIONS,
   TRANSACTION_PAYMENT_METHOD_OPTIONS,
   TRANSACTION_TYPE_OPTIONS,
-} from "../_constants/transaction";
+} from "../_constants/transactions";
 import { DatePicker } from "./ui/date-picker";
 import {
   TransactionCategory,
@@ -47,7 +47,6 @@ interface UpsertTransactionDialogProps {
   defaultValues?: formSchema;
   transactionId?: string;
   setIsOpen: (isOpen: boolean) => void;
-  
 }
 
 const formSchema = z.object({
@@ -121,7 +120,9 @@ const UpsertTransactionDialog = ({
       <DialogTrigger asChild></DialogTrigger>
       <DialogContent>
         <DialogHeader>
-          <DialogTitle>{isUpdate ? 'Atualizar' : 'Criar'} Transação</DialogTitle>
+          <DialogTitle>
+            {isUpdate ? "Atualizar" : "Criar"} Transação
+          </DialogTitle>
           <DialogDescription>Insira as informações a baixo</DialogDescription>
         </DialogHeader>
         <Form {...form}>
@@ -258,7 +259,9 @@ const UpsertTransactionDialog = ({
                   Cancelar
                 </Button>
               </DialogClose>
-              <Button type="submit" className="text-bold">{isUpdate ? 'Atualizar' : "Adicionar"}</Button>
+              <Button type="submit" className="text-bold">
+                {isUpdate ? "Atualizar" : "Adicionar"}
+              </Button>
             </DialogFooter>
           </form>
         </Form>
