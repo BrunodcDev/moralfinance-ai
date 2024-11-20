@@ -1,4 +1,4 @@
-"use server";
+"use server"
 
 import { db } from "@/app/_lib/prisma";
 import { DeleteTransactionSchema } from "./schema";
@@ -16,4 +16,4 @@ export const deleteTransaction = async ({
     revalidatePath('/transactions')
     revalidatePath('/')
 
-}
+}   
