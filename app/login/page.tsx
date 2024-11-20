@@ -19,8 +19,7 @@ const LoginPage = async () => {
                     src="/Logo.png"
                     width={173}
                     height={39}
-                    alt="Finance AI"
-                    className="mb-8"
+                    alt="MoralFinance AI"
                 />
                 <h1 className="mb-3 text-4xl font-bold">Bem-vindo</h1>
                 <p className="mb-8 text-muted-foreground">
