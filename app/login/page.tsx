@@ -16,7 +16,7 @@ const LoginPage = async () => {
             {/* ESQUERDA */}
             <div className="mx-auto flex h-full max-w-[550px] flex-col justify-center p-8">
                 <Image
-                    src="/logo.png"
+                    src="/Logo.png"
                     width={173}
                     height={39}
                     alt="Finance AI"
