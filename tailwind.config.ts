@@ -13,6 +13,7 @@ const config: Config = {
 			green: "#008000",
 			danger: "#FF0000",
 			branco: "#FFFFFF",
+			fundo: "#020817",
   			background: 'hsl(var(--background))',
   			foreground: 'hsl(var(--foreground))',
   			card: {

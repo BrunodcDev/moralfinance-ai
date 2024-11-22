@@ -32,38 +32,47 @@ const Home = async ({ searchParams: { month } }: HomeProps) => {
   return (
     <>
       <Navbar />
-      <div className="flex h-full flex-col space-y-6 overflow-hidden p-6">
-        <div className="flex justify-between">
-          <h1 className="text-2xl font-bold">Dashboard</h1>
-          <div className="flex items-center gap-3">
-            <AiReportButton
-              month={month}
-              hasPremiumPlan={
-                user.publicMetadata.subscriptionPlan === "premium"
-              }
-            />
-            <TimeSelect />
-          </div>
-        </div>
-        <div className="grid h-full grid-cols-[2fr,1fr] gap-6 overflow-hidden">
-          <div className="flex flex-col gap-6 overflow-hidden">
-            <SummaryCards
-              month={month}
-              {...dashboard}
-              userCanAddTransaction={userCanAddTransaction}
-            />
-            <div className="grid h-full grid-cols-3 grid-rows-1 gap-6 overflow-hidden">
-              <TransactionsPieChart {...dashboard} />
-              <ExpensesPerCategory
-                expensesPerCategory={dashboard.totalExpensePerCategory}
+      <div className="flex h-full flex-col space-y-4 sm:space-y-6 overflow-hidden pt-6">
+        {/* HEADER */}
+        <div className="flex flex-col gap-3 sm:gap-4 md:flex-row md:justify-between md:items-center">
+            <div className="flex justify-between items-center">
+              <h1 className="text-xl sm:text-2xl font-bold">Dashboard</h1>
+              <AiReportButton
+                  month={month}
+                  hasPremiumPlan={
+                      user.publicMetadata.subscriptionPlan === "premium"
+                  }
               />
             </div>
-          </div>
-          <LastTransactions lastTransactions={dashboard.lastTransactions} />
+            <div className="flex flex-col gap-2 sm:gap-3 md:flex-row md:items-center">
+                <TimeSelect />
+            </div>
+        </div>
+
+        {/* CONTEÚDO PRINCIPAL */}
+        <div className="grid h-full grid-cols-1 gap-4 sm:gap-6 overflow-hidden">
+            {/* COLUNA PRINCIPAL */}
+            <div className="flex flex-col gap-4 sm:gap-6 overflow-hidden">
+                <SummaryCards
+                    month={month}
+                    {...dashboard}
+                    userCanAddTransaction={userCanAddTransaction}
+                />
+                <div className="grid grid-cols-1 gap-4 sm:gap-6 overflow-hidden lg:grid-cols-3 items-center">
+                    <TransactionsPieChart {...dashboard} />
+                    <ExpensesPerCategory
+                        expensesPerCategory={dashboard.totalExpensePerCategory}
+                    />
+                </div>
+            </div>
+
+            {/* COLUNA SECUNDÁRIA */}
+            <LastTransactions lastTransactions={dashboard.lastTransactions} />
         </div>
       </div>
     </>
-  );
+);
+
 };
 
 export default Home;

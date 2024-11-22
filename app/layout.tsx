@@ -21,17 +21,30 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="pt-BR">
-      <body
-      
-        className={`${mulish.className} dark antialiased`}
-      >
-        <ClerkProvider appearance={{
-          baseTheme: dark,
-        }}>
-          <div className="flex h-full flex-col overflow-hidden">{children}</div>
-        </ClerkProvider>
-        <Toaster />
-      </body>
+      <body className={`${mulish.className} antialiased dark`}>
+    {/* Provedor de Contexto */}
+    <ClerkProvider
+      appearance={{
+        baseTheme: dark,
+      }}
+    >
+      {/* Conteúdo Principal */}
+      <main className="flex flex-col overflow-hidden">
+        {/* Container Responsivo */}
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+          {children}
+        </div>
+      </main>
+    </ClerkProvider>
+
+    {/* Toaster para Notificações */}
+    <Toaster
+      position="bottom-right"
+      toastOptions={{
+        duration: 5000,
+      }}
+    />
+  </body>
     </html>
   );
 }

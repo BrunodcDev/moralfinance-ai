@@ -19,13 +19,19 @@ const SummaryCard = ({
 }: SummaryCardProps) => {
   return (
     <Card>
-      <CardHeader className="flex-row items-center gap-4">
+      <CardHeader className="flex-row justify-between items-center gap-4">
+        <div className="flex flex-row items-center gap-4">
         {icon}
         <p
           className={`${size === "small" ? "text-muted-foreground" : "text-white opacity-70"}`}
         >
           {title}
         </p>
+        </div>
+        
+        {size === "large" && (
+          <AddTransactionButton userCanAddTransaction={userCanAddTransaction} />
+        )}
       </CardHeader>
       <CardContent className="flex justify-between">
         <p
@@ -37,9 +43,7 @@ const SummaryCard = ({
           }).format(amount)}
         </p>
 
-        {size === "large" && (
-          <AddTransactionButton userCanAddTransaction={userCanAddTransaction} />
-        )}
+        
       </CardContent>
     </Card>
   );
