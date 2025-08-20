@@ -11,8 +11,6 @@ React.js – Construção de interface interativa
 
 Node.js – Backend da aplicação
 
-Firebase – Banco de dados e autenticação
-
 Git/GitHub – Controle de versão
 
 # Objetivo do projeto
