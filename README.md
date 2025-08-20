@@ -21,7 +21,7 @@ O objetivo do MoralFinance AI é aplicar conhecimentos em desenvolvimento fullst
 
 Aplicação prática de Next.js e React no desenvolvimento web
 
-Integração com backend usando Node.js e Firebase
+Integração com backend usando Node.js
 
 Conceitos de desenvolvimento fullstack e boas práticas de programação
 
