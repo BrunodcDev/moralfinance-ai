@@ -29,7 +29,7 @@ Conceitos de desenvolvimento fullstack e boas práticas de programação
 
 Experiência prática em gerenciamento de estados, rotas e componentes reutilizáveis
 
-#Como executar localmente
+# Como executar localmente
 # Clone o repositório
 git clone https://github.com/seu-usuario/MoralFinanceAI.git
 
