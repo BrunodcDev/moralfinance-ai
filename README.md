@@ -1,9 +1,9 @@
-##MoralFinance AI 💰🤖
+# MoralFinance AI 💰🤖
 
 Descrição:
 MoralFinance AI é uma plataforma de gestão financeira inteligente que monitora movimentações e oferece insights personalizados para ajudar os usuários a controlar melhor o orçamento.
 
-##Tecnologias utilizadas
+# Tecnologias utilizadas
 
 Next.js – Framework React para desenvolvimento web
 
@@ -15,11 +15,11 @@ Firebase – Banco de dados e autenticação
 
 Git/GitHub – Controle de versão
 
-##Objetivo do projeto
+# Objetivo do projeto
 
 O objetivo do MoralFinance AI é aplicar conhecimentos em desenvolvimento fullstack para criar uma aplicação funcional que auxilie na organização financeira pessoal, permitindo registrar transações e receber recomendações inteligentes.
 
-## O que aprendi
+# O que aprendi
 
 Aplicação prática de Next.js e React no desenvolvimento web
 
