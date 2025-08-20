@@ -30,16 +30,16 @@ Conceitos de desenvolvimento fullstack e boas práticas de programação
 Experiência prática em gerenciamento de estados, rotas e componentes reutilizáveis
 
 # Como executar localmente
-# Clone o repositório
+## Clone o repositório
 git clone https://github.com/seu-usuario/MoralFinanceAI.git
 
-# Entre na pasta do projeto
+## Entre na pasta do projeto
 cd MoralFinanceAI
 
-# Instale as dependências
+## Instale as dependências
 npm install
 
-# Execute o projeto
+## Execute o projeto
 npm run dev
 
 Contato
