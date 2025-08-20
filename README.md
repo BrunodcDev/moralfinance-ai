@@ -19,7 +19,7 @@ Git/GitHub – Controle de versão
 
 O objetivo do MoralFinance AI é aplicar conhecimentos em desenvolvimento fullstack para criar uma aplicação funcional que auxilie na organização financeira pessoal, permitindo registrar transações e receber recomendações inteligentes.
 
-##O que aprendi
+## O que aprendi
 
 Aplicação prática de Next.js e React no desenvolvimento web
 
