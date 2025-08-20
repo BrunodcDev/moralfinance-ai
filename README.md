@@ -40,8 +40,8 @@ npm install
 ## Execute o projeto
 npm run dev
 
-Contato
+# Contato
 
-LinkedIn
+[LinkedIn](https://www.linkedin.com/in/brunodc-dev/)
 
-Portfólio
+[Portfólio](https://portfolio-brunodcdev.web.app/)
